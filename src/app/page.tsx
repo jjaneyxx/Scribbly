@@ -1,3 +1,3 @@
-export default function Home() {
-  return <div className="text-3xl">Scribbly</div>;
+export default function Landing() {
+  return <div className="text-3xl">Landing Page</div>;
 }
