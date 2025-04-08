@@ -1,5 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
+body {
+  /* min-width: 1200px;*/
 }
