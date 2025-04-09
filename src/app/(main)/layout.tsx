@@ -7,9 +7,9 @@ type MainLayoutProps = {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col gap-10">
+    <div className="flex min-h-screen flex-col gap-[40px]">
       <Header />
-      <main className="mx-auto max-w-[1440px] lg:px-[190px]">{children}</main>
+      <div className="mx-auto flex w-full max-w-7xl flex-col px-4">{children}</div>
     </div>
   );
 }

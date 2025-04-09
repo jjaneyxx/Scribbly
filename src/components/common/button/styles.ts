@@ -1,5 +1,5 @@
 export const baseStyles =
-  'flex justify-center items-center box-border hover:opacity-80 cursor-pointer rounded-lg bg-black text-white transition-transform duration-200 ease-in-out hover:scale-105';
+  'flex justify-center items-center box-border hover:opacity-80 cursor-pointer rounded-lg bg-black text-white transition-transform duration-200 ease-in-out hover:scale-[1.05]';
 
 export const disabledStyles = 'cursor-not-allowed opacity-70';
 
