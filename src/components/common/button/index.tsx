@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { baseStyles, disabledStyles, sizeStyles } from '@/components/common/button/styles';
+import { baseStyles, disabledStyles, sizeStyles } from '@/components/common/Button/styles';
 import { twMerge } from 'tailwind-merge';
 import clsx from 'clsx';
 
