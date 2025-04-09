@@ -12,18 +12,18 @@ type CardProps = {
 
 export default function Card({ title, content, createAt, likes, onClick }: CardProps) {
   return (
-    <section className={cardStyles} onClick={onClick}>
+    <article className={cardStyles} onClick={onClick}>
       <div className="flex flex-col gap-2">
         <span className="text-[13px] text-[#666666]">익명</span>
-        <div className="flex flex-col gap-1">
+        <header className="flex flex-col gap-1">
           <h2 className="text-2xl font-bold">{title}</h2>
-          <p className="truncate">{content}</p>
-        </div>
+        </header>
+        <p className="truncate">{content}</p>
         <footer className="flex justify-between">
           <span className="text-[13px]">{createAt}</span>
           <div>🖤{likes}</div>
         </footer>
       </div>
-    </section>
+    </article>
   );
 }
