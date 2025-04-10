@@ -1,38 +1,19 @@
-'use client'; // 삭제
-
-import Card from '@/components/common/Card';
 import { supabase } from '@/lib/supabase';
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import PostCardList from './PostCardList';
+import { Post } from '@/types/post';
 
-export default function Page() {
-  const router = useRouter();
-  // test
-  useEffect(() => {
-    supabase.from('posts').select('*').then(console.log);
-  }, []);
+export default async function Page() {
+  const { error, data } = await supabase.from('posts').select('*');
 
-  const handleCardClicked = () => {
-    router.push('/post/[id]');
-  };
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const posts: Post[] = data ?? [];
 
   return (
     <main>
-      {/*test*/}
-      <Card
-        content="엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉"
-        createAt="2025.04.10"
-        likes={3}
-        onClick={handleCardClicked}
-        title="새벽입니다"
-      />
-      <Card
-        content="엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉 엄청 긴 내용이예요.😉"
-        createAt="2025.04.10"
-        likes={3}
-        onClick={handleCardClicked}
-        title="새벽입니다"
-      />
+      <PostCardList posts={posts} />
     </main>
   );
 }
