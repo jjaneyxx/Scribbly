@@ -2,7 +2,7 @@
 
 import Card from '@/components/common/Card';
 import { Post } from '@/types/post';
-import FormatDate from '@/utils/FormatDate';
+import formatDate from '@/utils/formatDate';
 import { useRouter } from 'next/navigation';
 
 export default function PostCardList({ posts }: { posts: Post[] }) {
@@ -19,7 +19,7 @@ export default function PostCardList({ posts }: { posts: Post[] }) {
             key={post.id}
             title={post.title}
             content={post.content}
-            createAt={FormatDate(post.created_at)}
+            createAt={formatDate(post.created_at)}
             likes={post.likes}
             onClick={() => {
               handlePostClicked(post.id);
