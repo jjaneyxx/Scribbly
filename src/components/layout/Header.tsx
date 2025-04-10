@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="w-full bg-white py-5">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4">
-        <Link href={'/'}>
+        <Link href={'/posts'}>
           <Image
             src="/icons/logo.svg"
             alt="logo"
