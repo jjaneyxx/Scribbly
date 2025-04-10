@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import StartButton from '@/components/common/Button/StartButton';
+import StartButton from '@/app/StartButton';
 
 export default function LandingPage() {
   return (

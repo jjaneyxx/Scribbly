@@ -1,3 +1,9 @@
-export default function Page() {
-  return <div>글 작성 페이지</div>;
+import CreatePostForm from './CreatePostForm';
+
+export default async function Page() {
+  return (
+    <main>
+      <CreatePostForm />
+    </main>
+  );
 }
