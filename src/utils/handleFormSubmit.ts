@@ -6,17 +6,12 @@ export async function createPost(formData: FormData) {
   const content = formData.get('content') as string;
 
   // submit form
-  const { error, data } = await supabase
+  const { error } = await supabase
     .from('posts')
     .insert({ title: title, content: content })
     .select();
 
-  if (error) {
-    console.error(error.message);
-    return;
-  }
-
-  return data;
+  return error;
 }
 
 // updatePost
