@@ -1,11 +1,19 @@
 'use client';
 
 import Button from '@/components/common/Button';
-import { handleInsertPost } from '@/utils/handleFormSubmit';
+import { createPost } from '@/utils/handleFormSubmit';
+import { useRouter } from 'next/navigation';
 
 export default function CreatePostForm() {
+  const router = useRouter();
+
+  const handleFormSubmit = async (formData: FormData) => {
+    await createPost(formData);
+    router.push('/posts');
+  };
+
   return (
-    <form action={handleInsertPost} className="flex flex-col">
+    <form action={handleFormSubmit} className="flex flex-col">
       <div className="flex flex-col gap-3">
         <input
           name="title"
