@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["dnviwibdicmavtxdpkic", "Pretendard", "Scribbly", "supabase", "Toastify"],
+  "cSpell.words": [
+    "dnviwibdicmavtxdpkic",
+    "kebap",
+    "Pretendard",
+    "Scribbly",
+    "supabase",
+    "Toastify"
+  ],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" }
