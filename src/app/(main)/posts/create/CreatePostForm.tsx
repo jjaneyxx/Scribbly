@@ -1,11 +1,26 @@
 'use client';
 
 import Button from '@/components/common/Button';
-import { handleInsertPost } from '@/utils/handleFormSubmit';
+import { createPost } from '@/utils/handleFormSubmit';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 export default function CreatePostForm() {
+  const router = useRouter();
+
+  const handleFormSubmit = async (formData: FormData) => {
+    const error = await createPost(formData);
+
+    if (error === null) {
+      toast.success('글이 추가되었어요');
+      router.push('/posts');
+    } else {
+      toast.error(`${error.code} : ${error.message}`);
+    }
+  };
+
   return (
-    <form action={handleInsertPost} className="flex flex-col">
+    <form action={handleFormSubmit} className="flex flex-col">
       <div className="flex flex-col gap-3">
         <input
           name="title"

@@ -9,7 +9,7 @@ export default function PostCardList({ posts }: { posts: Post[] }) {
   const router = useRouter();
 
   const handlePostClicked = (postId: number) => {
-    router.push(`/post/${postId}`);
+    router.push(`/posts/${postId}`);
   };
   return (
     <div>
